@@ -3,9 +3,11 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
 WORKDIR /app
 COPY *.sln .
 COPY api/*.csproj ./api/
+COPY test/*.csproj ./test/
 RUN dotnet restore
 
 COPY api/. ./api/
+COPY test/. ./test/
 WORKDIR /app/api
 RUN dotnet publish biblio_api.csproj -o out
 
