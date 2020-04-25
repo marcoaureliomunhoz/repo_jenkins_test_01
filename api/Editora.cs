@@ -14,7 +14,7 @@ namespace biblio_api {
         {
             var r = new Random();
             Id = r.Next() + 1;
-            //Nome = nome?.Trim();
+            Nome = nome?.Trim();
         }
 
         public void AlterarNome(string nome)
