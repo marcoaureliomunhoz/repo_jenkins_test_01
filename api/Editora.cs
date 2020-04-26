@@ -14,7 +14,7 @@ namespace biblio_api {
         public Editora(string nome)
         {
             var provider = new RNGCryptoServiceProvider();
-            var byteArray = new byte[4];
+            var byteArray = new byte[5];
             provider.GetBytes(byteArray);
             Id = BitConverter.ToInt32(byteArray, 1);
             Nome = nome?.Trim();
