@@ -11,9 +11,9 @@ COPY test/. ./test/
 WORKDIR /app/api
 RUN dotnet publish biblio_api.csproj -o out
 
-FROM build AS test
-WORKDIR /app
-RUN dotnet test --logger:trx
+#FROM build AS test
+#WORKDIR /app
+#RUN dotnet test --logger:trx
 
 #FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
 FROM build AS runtime
