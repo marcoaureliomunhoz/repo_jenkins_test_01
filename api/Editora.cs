@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 
 namespace biblio_api {
     public class Editora
@@ -12,8 +13,13 @@ namespace biblio_api {
 
         public Editora(string nome)
         {
-            var r = new Random();
-            Id = r.Next() + 1;
+            var provider = new RNGCryptoServiceProvider();
+            var byteArray = new byte[4];
+            provider.GetBytes(byteArray);
+            Id = BitConverter.ToInt32(byteArray, 1);
+
+            //var r = new Random();
+            //Id = r.Next() + 1;
             Nome = nome?.Trim();
         }
 
