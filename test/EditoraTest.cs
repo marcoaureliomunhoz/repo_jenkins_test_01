@@ -29,5 +29,17 @@ namespace biblio_test
 
             Assert.Equal(novoNome, editora.Nome);
         }
+
+        [Fact]
+        public void DeveRemoverEspacosEmBranco()
+        {
+            var nome = "novatec";
+            var editora = new Editora(nome);
+            var novoNomeComEspacosEmBranco = "novatec2   ";
+            var novoNomeSemEspacosEmBranco = "novatec2";
+            editora.AlterarNome(novoNomeComEspacosEmBranco);
+
+            Assert.Equal(novoNomeSemEspacosEmBranco, editora.Nome);
+        }
     }
 }
