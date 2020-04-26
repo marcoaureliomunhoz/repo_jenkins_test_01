@@ -17,6 +17,7 @@ namespace biblio_test
             var editora = new Editora(nome);
 
             Assert.Equal(nome, editora.Nome);
+            Assert.NotEqual(0, editora.Id);
         }
 
         [Fact]
