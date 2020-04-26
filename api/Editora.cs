@@ -17,9 +17,6 @@ namespace biblio_api {
             var byteArray = new byte[4];
             provider.GetBytes(byteArray);
             Id = BitConverter.ToInt32(byteArray, 1);
-
-            //var r = new Random();
-            //Id = r.Next() + 1;
             Nome = nome?.Trim();
         }
 
