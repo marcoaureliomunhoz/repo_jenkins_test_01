@@ -36,7 +36,7 @@ namespace biblio_test
             var nome = "novatec";
             var editora = new Editora(nome);
             var novoNomeComEspacosEmBranco = "novatec2   ";
-            var novoNomeSemEspacosEmBranco = "novatec2  ";
+            var novoNomeSemEspacosEmBranco = "novatec2";
             editora.AlterarNome(novoNomeComEspacosEmBranco);
 
             Assert.Equal(novoNomeSemEspacosEmBranco, editora.Nome);
